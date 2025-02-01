@@ -20,6 +20,19 @@ class Level:
             if obj.name == 'player':
                 Player((obj.x, obj.y), self.all_sprites, self.collision_sprites)
 
+        for obj in tmx_map.get_layer_by_name('Moving Objects'):
+            if obj.name == 'helicopter':
+                if obj.width > obj.height: # Horizontal movement
+                    mvoe_dir = 'x'
+                    start_pos = (obj.x, obj.y + obj.height / 2)
+                    end_pos = (obj.x + obj.width, obj.y + obj.height / 2)
+                else: # Vertical movement
+                    move_dir = 'y'
+                    start_pos = (obj.x + obj.width / 2, obj.y)
+                    end_pos = (obj.x + obj.width / 2, obj.y + obj.height )
+                speed = obj.properties['speed']
+
+
 
     def run(self, dt):
         self.display_surface.fill('black')
