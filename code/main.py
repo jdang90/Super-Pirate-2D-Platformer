@@ -1,7 +1,9 @@
 from settings import *
 from level import Level
 from pytmx.util_pygame import load_pygame
+import os
 from os.path import join
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 class Game:
     def __init__(self):
