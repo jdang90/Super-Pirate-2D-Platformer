@@ -24,3 +24,4 @@ class Timer:
 			if self.func and self.start_time != 0:
 				self.func()
 			self.deactivate()
+
