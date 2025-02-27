@@ -128,9 +128,9 @@ class Overworld:
 		if self.current_node and not self.icon.path:
 			if keys[pygame.K_DOWN] and self.current_node.can_move('down'):
 				self.move('down')
-			if keys[pygame.K_LEFT] and self.current_node.can_move('left'):
+			if (keys[pygame.K_LEFT] or keys[pygame.K_a]) and self.current_node.can_move('left'):
 				self.move('left')
-			if keys[pygame.K_RIGHT] and self.current_node.can_move('right'):
+			if (keys[pygame.K_RIGHT] or keys[pygame.K_d]) and self.current_node.can_move('right'):
 				self.move('right')
 			if keys[pygame.K_UP] and self.current_node.can_move('up'):
 				self.move('up')

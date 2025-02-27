@@ -1,7 +1,7 @@
 from settings import * 
 from sprites import Sprite, Cloud
 from random import choice, randint
-from timer import Timer
+from ptimer import Timer
 
 class WorldSprites(pygame.sprite.Group):
 	def __init__(self, data):

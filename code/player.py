@@ -1,5 +1,5 @@
 from settings import * 
-from timer import Timer
+from ptimer import Timer
 from os.path import join
 from math import sin
 
@@ -52,11 +52,11 @@ class Player(pygame.sprite.Sprite):
 		input_vector = vector(0,0)
 		if not self.timers['wall jump'].active:
 			
-			if keys[pygame.K_RIGHT]:
+			if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
 				input_vector.x += 1
 				self.facing_right = True
 			
-			if keys[pygame.K_LEFT]:
+			if keys[pygame.K_LEFT] or keys[pygame.K_a]:
 				input_vector.x -= 1
 				self.facing_right = False
 			
