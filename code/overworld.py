@@ -126,13 +126,13 @@ class Overworld:
 	def input(self):
 		keys = pygame.key.get_pressed()
 		if self.current_node and not self.icon.path:
-			if keys[pygame.K_DOWN] and self.current_node.can_move('down'):
+			if (keys[pygame.K_DOWN] or keys[pygame.K_s]) and self.current_node.can_move('down'):
 				self.move('down')
 			if (keys[pygame.K_LEFT] or keys[pygame.K_a]) and self.current_node.can_move('left'):
 				self.move('left')
 			if (keys[pygame.K_RIGHT] or keys[pygame.K_d]) and self.current_node.can_move('right'):
 				self.move('right')
-			if keys[pygame.K_UP] and self.current_node.can_move('up'):
+			if (keys[pygame.K_UP] or keys[pygame.K_w]) and self.current_node.can_move('up'):
 				self.move('up')
 			if keys[pygame.K_RETURN]:
 				self.data.current_level = self.current_node.level
