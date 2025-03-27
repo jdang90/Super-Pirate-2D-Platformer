@@ -60,7 +60,7 @@ class Player(pygame.sprite.Sprite):
 				input_vector.x -= 1
 				self.facing_right = False
 			
-			if keys[pygame.K_DOWN]:
+			if keys[pygame.K_DOWN] or keys[pygame.K_s]:
 				self.timers['platform skip'].activate()
 
 			if keys[pygame.K_x]:
